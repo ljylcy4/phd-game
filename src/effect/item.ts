@@ -57,8 +57,9 @@ export class ItemRegistry extends EffectProviderRegistry<Item> {
                 effects = {};
             }
             let rarity = typeof itemDef['rarity'] === 'number' ? itemDef['rarity'] : 0;
-            let icon = typeof itemDef['icon'] === 'string' ? itemDef['icon'] : 0;
+            let icon = typeof itemDef['icon'] === 'string' ? itemDef['icon'] : '0'; // 0
             this.add(new Item(itemDef['id'], rarity, icon, effects));
+            //this.add(new Item(itemDef['id'], rarity, '', effects));
         }
     }
 

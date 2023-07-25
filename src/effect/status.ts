@@ -57,8 +57,9 @@ export class StatusRegistry extends EffectProviderRegistry<Status> {
                 effects = {};
             }
             let duration = typeof statusDef['duration'] === 'number' ? statusDef['duration'] : Infinity;
-            let icon = typeof statusDef['icon'] === 'string' ? statusDef['icon'] : 0;
+            let icon = typeof statusDef['icon'] === 'string' ? statusDef['icon'] : '0';
             this.add(new Status(statusDef['id'], duration, icon, effects));
+            //this.add(new Status(statusDef['id'], duration, '', effects));
         }
     }
 

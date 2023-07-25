@@ -1,12 +1,13 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 const path = require('path');
 
 module.exports = {
     mode: "development",
     entry: "./src/app.ts",
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js'],
+        fallback: {'buffer':require.resolve("buffer/")}
     },
     output: {
         filename: "app.bundle.js",
@@ -17,17 +18,24 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
-                loader: "awesome-typescript-loader"
+                loader: "ts-loader"
             }
         ]
     },
     plugins: [
-        new CopyWebpackPlugin([{
+        new CopyWebpackPlugin({
+            patterns: [{
             from: path.join(__dirname, 'static'),
             to: path.join(__dirname, 'dist')
-        }]),
-        new UglifyJsPlugin({
+            }],
+        }),
+/*         new UglifyJsPlugin({
             sourceMap: true
-        })
-    ]
+        }) */
+    ],
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+      },
+    
 };

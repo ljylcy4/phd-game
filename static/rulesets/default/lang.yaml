@@ -75,6 +75,7 @@ message.unhappyAdvisor: Your advisor seemed to be unhappy about your recent perf
 message.advisorHappyAgain: Your advisor seemed to be quite satisfied with your recent performance.
 # main events
 message.beginning: Congratulations. You have been **admitted** as a new PhD student here. Will you accept the offer?
+#message.beginning: 하루는 신문을 읽었는데 경제적 자유를 달성하기 위해서는 **40살**에 **100억원**의 자산이 있어야 된다고 한다. // 그래 결심했어, 난 경제적 자유를 누릴거야!ㅁㄴㅇㅁㄴㅇ
 message.acceptOffer: Accept the offer.
 message.acceptedOffer: You accepted the offer and found your advisor. You are required to publish at least **3 journal papers** to qualify your degree.
 message.declineOffer: Decline the offer.

@@ -43,4 +43,4 @@ const app = new App(document.body, {
 });
 app.start().then(() => {
     console.log('App started successfully.');
-});
+})

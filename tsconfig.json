@@ -12,6 +12,7 @@
             "dom", "es2015", "es2015.promise"
         ]
     },
+    "loader": "ts-loader",
     "exclude": [
         "node_modules"
     ]
